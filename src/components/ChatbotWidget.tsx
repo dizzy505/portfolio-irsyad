@@ -1,8 +1,14 @@
-import { useEffect, useRef, useState, type KeyboardEvent } from "react";
+import { useEffect, useLayoutEffect, useRef, useState, type KeyboardEvent } from "react";
 import { MessageCircle, X } from "lucide-react";
 
 const ChatbotWidget = () => {
-  const [botOpen, setBotOpen] = useState(true);
+  const [botOpen, setBotOpen] = useState(false);
+  const [mounted, setMounted] = useState(false);
+  // Force closed before paint to avoid any initial flash from HMR/state carryover
+  useLayoutEffect(() => {
+    setBotOpen(false);
+    setMounted(true);
+  }, []);
 
   type ChatMsg = { role: 'bot' | 'user'; text: string };
   const Chatbot = () => {
@@ -138,6 +144,7 @@ const ChatbotWidget = () => {
     );
   };
 
+  if (!mounted) return null;
   return (
     <div>
       {botOpen ? (
