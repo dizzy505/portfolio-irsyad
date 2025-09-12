@@ -6,7 +6,7 @@ type Certificate = {
   title: string;
   issuer: string;
   period: string;
-  image: string;
+  images: string[];
   description: string;
 };
 
@@ -17,6 +17,14 @@ type CertificatesViewProps = {
 
 export const CertificatesView = ({ certificates, setSelectedCertificate }: CertificatesViewProps) => {
   const [activeCert, setActiveCert] = useState<Certificate | null>(null);
+  const [modalIndex, setModalIndex] = useState<Record<string, number>>({});
+
+  const prevImage = (id: string, total: number) => {
+    setModalIndex((p) => ({ ...p, [id]: p[id] === undefined ? total - 1 : (p[id] - 1 + total) % total }));
+  };
+  const nextImage = (id: string, total: number) => {
+    setModalIndex((p) => ({ ...p, [id]: p[id] === undefined ? 1 : (p[id] + 1) % total }));
+  };
   return (
     <>
     <div className="space-y-8">
@@ -44,7 +52,7 @@ export const CertificatesView = ({ certificates, setSelectedCertificate }: Certi
           >
             <div className="h-48 bg-gray-100 overflow-hidden relative">
               <img 
-                src={`/images/${cert.image}`}
+                src={`/images/${(cert.images && cert.images[0]) || ''}`}
                 alt={cert.title}
                 className="w-full h-full object-contain p-4"
               />
@@ -101,11 +109,35 @@ export const CertificatesView = ({ certificates, setSelectedCertificate }: Certi
               >
                 <X className="w-5 h-5" />
               </button>
-              <img
-                src={`/images/${activeCert.image}`}
-                alt={activeCert.title}
-                className="w-full max-h-[85vh] object-contain bg-black"
-              />
+              {(() => {
+                const id = activeCert.title;
+                const total = activeCert.images.length;
+                const idx = modalIndex[id] ?? 0;
+                const src = `/images/${activeCert.images[idx]}`;
+                return (
+                  <div className="relative">
+                    <img src={src} alt={activeCert.title} className="w-full max-h-[85vh] object-contain bg-black" />
+                    {total > 1 && (
+                      <>
+                        <button
+                          className="absolute top-1/2 left-3 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white rounded-full w-10 h-10 flex items-center justify-center"
+                          onClick={() => prevImage(id, total)}
+                          aria-label="Previous image"
+                        >
+                          <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path fillRule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clipRule="evenodd" /></svg>
+                        </button>
+                        <button
+                          className="absolute top-1/2 right-3 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white rounded-full w-10 h-10 flex items-center justify-center"
+                          onClick={() => nextImage(id, total)}
+                          aria-label="Next image"
+                        >
+                          <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path fillRule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clipRule="evenodd" /></svg>
+                        </button>
+                      </>
+                    )}
+                  </div>
+                );
+              })()}
             </div>
           </motion.div>
         </motion.div>

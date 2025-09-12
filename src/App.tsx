@@ -31,7 +31,7 @@ type Certificate = {
   title: string;
   issuer: string;
   issueDate: string;
-  image: string;
+  image: string | string[];
   description?: string;
 };
 
@@ -144,7 +144,7 @@ const certificates: Certificate[] = [
     title: 'DQLab Bootcamp Certificates',
     issuer: 'DQLab',
     issueDate: '2023',
-    image: '/images/sertif dqlab.jpg',
+    image: ['/images/sertif dqlab.jpg', '/images/sertif dqlab 2.jpg', '/images/sertif dqlab 3.jpg'],
     description: 'Python Fundamental for Data Science, R Fundamental for Data Science, Fundamental SQL Using SELECT Statement.'
   },
   {
@@ -154,6 +154,14 @@ const certificates: Certificate[] = [
     issueDate: '2025',
     image: '/images/sertif udemy.jpg',
     description: 'Advanced data analysis techniques using Excel and Google Sheets.'
+  },
+  {
+    id: 'IBMSkillsBuild',
+    title: 'Data Classification and Summarization Using IBM Granite',
+    issuer: 'IBM Skills Build',
+    issueDate: '2025',
+    image: ['/images/Sertif IBM.jpg', '/images/Sertif Hacktive8.jpg'],
+    description: 'Data classification and summarization techniques using IBM Granite.'
   }
 ];
 
@@ -294,7 +302,7 @@ const HomeView = () => (
             transition={{ duration: 0.5, delay: 0.1 }}
             className="text-xl text-gray-600 mb-8"
           >
-            Data Enthusiast
+            Fresh Graduate | Future Data Analyst
           </motion.p>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -610,7 +618,7 @@ const App = () => {
               title: c.title,
               issuer: c.issuer,
               period: c.issueDate,
-              image: c.image.replace('/images/', ''),
+              images: (Array.isArray(c.image) ? c.image : [c.image]).map((src) => src.replace('/images/', '')),
               description: c.description || '',
             }))}
             setSelectedCertificate={() => { /* no-op */ }}
@@ -750,7 +758,7 @@ const App = () => {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: 20 }}
             onClick={scrollToTop}
-            className="fixed bottom-6 right-6 bg-blue-600 hover:bg-blue-700 text-white p-3 rounded-full shadow-lg z-30 transition-all duration-300 hover:scale-110"
+            className="fixed bottom-4 right-4 bg-blue-600 hover:bg-blue-700 text-white p-4 rounded-full shadow-xl z-30 transition-all duration-300 hover:scale-110"
             aria-label="Back to top"
           >
             <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
