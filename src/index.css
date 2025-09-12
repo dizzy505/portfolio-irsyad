@@ -1,0 +1,146 @@
+/* stylelint-disable */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary: #1e3a8a;     /* Blue Dark */
+  --secondary: #60a5fa;   /* Blue Pastel */
+  --accent: #3b82f6;      /* Blue Accent */
+  --background: #f8fafc;  /* Soft White */
+  --text: #1e293b;        /* Dark Gray */
+  --text-light: #64748b;  /* Light Gray */
+  --card-bg: #ffffff;     /* White */
+  --card-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+/* Base Styles */
+@layer base {
+  html {
+    font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply bg-gray-50 text-gray-800;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-semibold text-gray-900;
+  }
+  
+  p {
+    @apply text-gray-700 leading-relaxed;
+  }
+  
+  .section {
+    @apply py-16 px-4 md:px-8;
+  }
+  
+  .container {
+    @apply max-w-6xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+  
+  .card {
+    @apply bg-white rounded-lg shadow-md p-6 transition-all duration-300 hover:shadow-lg;
+  }
+  
+  .btn {
+    @apply px-6 py-2 rounded-full font-medium transition-all duration-300 ease-in-out transform hover:scale-105;
+  }
+  
+  .btn-primary {
+    @apply bg-blue-600 text-white hover:bg-blue-700;
+  }
+  
+  .btn-outline {
+    @apply border-2 border-blue-600 text-blue-600 hover:bg-blue-50;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* For Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #cbd5e1 #f1f5f9;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.6s ease-out forwards;
+}
+
+/* Custom Components */
+.skill-progress {
+  @apply w-full bg-gray-200 rounded-full h-2.5;
+}
+
+.skill-progress-fill {
+  @apply bg-blue-600 h-2.5 rounded-full transition-all duration-700 ease-in-out;
+}
+
+/* Timeline */
+.timeline-container {
+  @apply relative pl-8 border-l-2 border-blue-200;
+}
+
+.timeline-item {
+  @apply relative pb-8;
+}
+
+.timeline-item:last-child {
+  @apply pb-0;
+}
+
+.timeline-dot {
+  @apply absolute w-4 h-4 rounded-full bg-blue-600 -left-[9px] top-1.5;
+}
+
+/* Project Card */
+.project-card {
+  @apply card overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1;
+}
+
+.project-image {
+  @apply w-full h-48 object-cover rounded-t-lg transition-transform duration-500 hover:scale-105;
+}
+
+/* Certificate Card */
+.certificate-card {
+  @apply card overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1;
+}
+
+.certificate-image {
+  @apply w-full h-48 object-contain bg-gray-50 p-2 rounded-t-lg;
+}
+
+/* Contact Links */
+.contact-link {
+  @apply flex items-center gap-3 p-3 rounded-lg bg-blue-50 text-blue-700 hover:bg-blue-100 transition-colors duration-300;
+}
