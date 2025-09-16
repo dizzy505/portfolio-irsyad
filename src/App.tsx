@@ -774,7 +774,7 @@ const App = () => {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: 20 }}
             onClick={scrollToTop}
-            className="fixed bottom-4 right-4 bg-blue-600 hover:bg-blue-700 text-white p-4 rounded-full shadow-xl z-30 transition-all duration-300 hover:scale-110"
+            className="fixed bottom-4 right-20 bg-blue-600 hover:bg-blue-700 text-white p-3 rounded-full shadow-xl z-50 transition-all duration-300 hover:scale-110"
             aria-label="Back to top"
           >
             <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
