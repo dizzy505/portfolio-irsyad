@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence, useSpring } from 'framer-motion';
 import { Menu, X, Home, User, Briefcase, Award, BookOpen, Mail, Phone, Github, Linkedin, FileText } from 'lucide-react';
+import N8NChatWidget from './components/N8NChatWidget';
 import { ProjectsView } from './components/ProjectsView';
 import { CertificatesView } from './components/CertificatesView';
 import { LearningView } from './components/LearningView';
@@ -750,6 +751,21 @@ const App = () => {
         {renderSections()}
       </main>
 
+      {/* Chat Widget */}
+      <AnimatePresence>
+        {showBackToTop && (
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: 20 }}
+            className="fixed bottom-20 right-4 z-30"
+            style={{ height: 'calc(100vh - 100px)' }}
+          >
+            <N8NChatWidget />
+          </motion.div>
+        )}
+      </AnimatePresence>
+
       {/* Back to top button */}
       <AnimatePresence>
         {showBackToTop && (
@@ -820,6 +836,7 @@ const App = () => {
       </footer>
 
       {/* Image Modal removed (unused) */}
+      <N8NChatWidget />
     </div>
   );
 };

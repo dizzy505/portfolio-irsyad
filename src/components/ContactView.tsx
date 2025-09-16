@@ -1,9 +1,7 @@
-import ChatbotWidget from "./ChatbotWidget";
 import { Mail, Phone, MapPin, Github, Linkedin } from "lucide-react";
 
 export const ContactView = () => {
 
-  // Page content + Floating Chatbot Widget
   return (
     <div className="relative">
       {/* Contact Section (visible page content) */}
@@ -55,9 +53,6 @@ export const ContactView = () => {
           </div>
         </div>
       </section>
-
-      {/* Floating Chatbot */}
-      <ChatbotWidget />
     </div>
   );
 };
