@@ -69,6 +69,8 @@ const projects: Project[] = [
     title: 'World Layoffs Data Analysis',
     description: 'Processed and analyzed global layoffs dataset using SQL to explore workforce reduction trends across industries and regions. Identified surge in layoffs during 2022, primarily in tech, retail, and consumer goods sectors, with the US and Europe as major hotspots.',
     previewImages: ['/images/world-layoffs1.png', '/images/world-layoffs.png', '/images/world-layoffs2.png'],
+    githubUrl: 'https://github.com/dizzy505/world-layoffs',
+    liveUrl: 'https://porto-irsyad.netlify.app',
     technologies: ['SQL', 'Data Cleaning', 'EDA', 'Data Analysis', 'Power BI']
   },
   {
@@ -84,6 +86,8 @@ const projects: Project[] = [
       '/images/jkn-sentiment6.png',
       '/images/jkn-sentiment7.png'
     ],
+    githubUrl: 'https://github.com/dizzy505/SentimentAnalysisJKN',
+    liveUrl: 'https://sentiment-jkn.streamlit.app/',
     technologies: ['Python', 'Sentiment Analysis', 'NLP', 'Streamlit']
   },
   {
@@ -95,6 +99,8 @@ const projects: Project[] = [
       '/images/bike-sales2.png',
       '/images/bike-sales3.png'
     ],
+    githubUrl: 'https://github.com/dizzy505/bikes-sales',
+    liveUrl: 'https://public.tableau.com/views/BikeSalesDashboard_17460906746870/Dashboard1',
     technologies: ['Data Cleaning', 'EDA', 'Dashboard', 'Analytics']
   },
   {
@@ -108,6 +114,8 @@ const projects: Project[] = [
       '/images/career-guide4.jpg',
       '/images/career-guide5.jpg'
     ],
+    githubUrl: 'https://github.com/dizzy505/Career-Guide',
+    liveUrl: 'https://app-career-guide.streamlit.app/',
     technologies: ['Python', 'Streamlit', 'Expert System', 'Career Recommendation']
   },
   {
@@ -119,6 +127,8 @@ const projects: Project[] = [
       '/images/ckd-prediction2.png',
       '/images/ckd-prediction3.png'
     ],
+    githubUrl: 'https://github.com/dizzy505/kidney-disease',
+    liveUrl: 'https://kidney-predictor.streamlit.app/',
     technologies: ['Python', 'Streamlit', 'Machine Learning', 'Healthcare']
   }
 ];

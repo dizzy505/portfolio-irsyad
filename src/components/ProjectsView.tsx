@@ -114,35 +114,9 @@ export const ProjectsView = ({ projects, setSelectedProject }: ProjectsViewProps
               })()}
             </div>
             <div className="p-6">
-              <div className="flex justify-between items-start mb-2">
-                <h3 className="text-xl font-bold">{project.title}</h3>
-                <div className="flex space-x-2">
-                  {project.github && (
-                    <a 
-                      href={project.github} 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      onClick={(e) => e.stopPropagation()}
-                      className="text-gray-500 hover:text-blue-600"
-                    >
-                      <Github className="w-5 h-5" />
-                    </a>
-                  )}
-                  {project.link && (
-                    <a 
-                      href={project.link} 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      onClick={(e) => e.stopPropagation()}
-                      className="text-gray-500 hover:text-blue-600"
-                    >
-                      <ExternalLink className="w-5 h-5" />
-                    </a>
-                  )}
-                </div>
-              </div>
+              <h3 className="text-xl font-bold mb-2">{project.title}</h3>
               <p className="text-gray-600 mb-4">{project.description}</p>
-              <div className="flex flex-wrap gap-2">
+              <div className="flex flex-wrap gap-2 mb-4">
                 {project.tags.map((tag, i) => (
                   <span 
                     key={i} 
@@ -151,6 +125,32 @@ export const ProjectsView = ({ projects, setSelectedProject }: ProjectsViewProps
                     {tag}
                   </span>
                 ))}
+              </div>
+              <div className="flex gap-2 mt-auto">
+                {project.github && (
+                  <a 
+                    href={project.github} 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    onClick={(e) => e.stopPropagation()}
+                    className="flex items-center gap-2 px-4 py-2 bg-gray-800 hover:bg-gray-900 text-white rounded-lg transition-colors text-sm font-medium"
+                  >
+                    <Github className="w-4 h-4" />
+                    <span>GitHub</span>
+                  </a>
+                )}
+                {project.link && (
+                  <a 
+                    href={project.link} 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    onClick={(e) => e.stopPropagation()}
+                    className="flex items-center gap-2 px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-colors text-sm font-medium"
+                  >
+                    <ExternalLink className="w-4 h-4" />
+                    <span>Website</span>
+                  </a>
+                )}
               </div>
             </div>
           </motion.div>
