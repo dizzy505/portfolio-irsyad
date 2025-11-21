@@ -216,7 +216,7 @@ const skills: SkillCategory[] = [
   {
     id: 'programming',
     title: 'Programming',
-    items: ['Python', 'SQL', 'R', 'HTML/CSS']
+    items: ['Python', 'SQL']
   },
   {
     id: 'data-analysis',
