@@ -178,16 +178,6 @@ const certificates: Certificate[] = [
 
 const workExperiences: WorkExperience[] = [
   {
-    id: 'kopindosat',
-    company: 'KOPINDOSAT',
-    position: 'Freelance Drafter',
-    period: '2024 - 2025',
-    description: [
-      'Created detailed railway blueprints and track layouts',
-      'Developed precise technical drawings for railway infrastructure'
-    ]
-  },
-  {
     id: 'ministry-agriculture',
     company: 'Ministry of Agriculture',
     position: 'Data Entry Internship',
