@@ -27,7 +27,7 @@ const N8NChatWidget = () => {
 
     // Initialize the chat with custom styles and welcome message
     createChat({
-      webhookUrl: 'https://rayn-coogler.app.n8n.cloud/webhook/e5616171-e3b5-4c39-81d4-67409f9fa60a/chat',
+      webhookUrl: 'http://localhost:5678/webhook/b28212aa-f6c4-4897-988f-a38280c37fa9/chat',
       target: chatContainer,
       showWelcomeScreen: false, // Disable the default welcome screen
       initialMessages: [
