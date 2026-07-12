@@ -178,6 +178,17 @@ const certificates: Certificate[] = [
 
 const workExperiences: WorkExperience[] = [
   {
+    id: 'bca',
+    company: 'PT Bank Central Asia Tbk (BCA)',
+    position: 'Data Analyst Intern',
+    period: 'Nov 2025 - May 2026',
+    description: [
+      'Built an automated ETL pipeline using Power Automate, Excel VBA, and Power BI, reducing reporting time by ~90%',
+      'Developed Power BI dashboards for reporting, productivity tracking, and performance monitoring',
+      'Created data visualizations to support operational analysis and business decision-making'
+    ]
+  },
+  {
     id: 'ministry-agriculture',
     company: 'Ministry of Agriculture',
     position: 'Data Entry Internship',
@@ -206,7 +217,7 @@ const skills: SkillCategory[] = [
   {
     id: 'programming',
     title: 'Programming',
-    items: ['Python', 'SQL']
+    items: ['Python', 'SQL','VBA']
   },
   {
     id: 'data-analysis',
@@ -216,7 +227,7 @@ const skills: SkillCategory[] = [
   {
     id: 'tools',
     title: 'Tools',
-    items: ['Jupyter Notebook', 'Excel', 'Workbench', 'Power BI', 'Tableau', 'Looker Studio']
+    items: ['Jupyter Notebook', 'Excel', 'Workbench', 'Power BI', 'Tableau', 'Looker Studio','Power Automate']
   },
   {
     id: 'soft-skills',
