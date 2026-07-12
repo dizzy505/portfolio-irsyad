@@ -403,7 +403,7 @@ const AboutView = () => (
               <div className="space-y-4">
                 <div className="border-l-4 border-blue-500 pl-4 py-1">
                   <h5 className="font-medium text-gray-900">Bachelor of Informatics Engineering</h5>
-                  <p className="text-gray-600">Universitas Indraprasta PGRI • 2021 - Present • GPA: 3.56/4.00</p>
+                  <p className="text-gray-600">Universitas Indraprasta PGRI • 2021 - 2025 • GPA: 3.56/4.00</p>
                   <p className="text-gray-600 mt-1"><span className="font-medium">Relevant Courses:</span> Data Mining, Database System, Image Processing, Neural Networks</p>
                 </div>
                 <div className="border-l-4 border-blue-500 pl-4 py-1">
